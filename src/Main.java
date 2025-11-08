@@ -2,14 +2,17 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+    Product laptop = new Product("Laptop", 456789,3) ;
+    Product mouse = new Product("mouse", 36789,2) ;
+    Product keybord = new Product("Laptop", 86789,6) ;
+    Product pacetAygen = new Product("Laptop", 999999,1) ;
+    Cart cart = new Cart();
+    cart.add(laptop);
+    cart.add(mouse);
+    cart.add(keybord);
+    cart.add(pacetAygen);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+    CartVisitor visitor = new CartVisitor();
+    cart.accept(visitor);
     }
 }

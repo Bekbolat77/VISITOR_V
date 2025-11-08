@@ -1,4 +1,3 @@
-package PACKAGE_NAME;
-
-public class Visitor {
+public interface Visitor {
+    void visit(Cart cart);
 }
